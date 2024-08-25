@@ -1,0 +1,224 @@
+.navbar .navbar-brand .logo img {
+  border: none;
+  border-radius: 0px;
+  height: 60px;
+}
+
+.navbar .navbar-brand a {
+  padding-left: 0px;
+}
+
+.btn-xs {
+  padding: 4px 7px 2px 7px  ;
+  font-size: 11px;
+}
+
+.left-avatar {
+  float: left!important;
+}
+
+.progress {
+    margin-bottom: 10px;
+}
+
+.pagination {
+  margin-top: 10px!important;
+}
+.pagination-info {
+  color: #777;
+  font-size: 90%;
+}
+
+.page-list {
+  display: block!important;
+}
+
+.page-list .btn-default {
+  border: 1px solid #ddd;
+
+}
+
+.full-width, .btn-social {
+  width: 100%;
+  padding: 10px 16px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    text-align:  center;
+}
+
+.btn-google {
+  background-color: transparent;
+  border-color: #b2bfc7;
+}
+
+.or-social-media {
+  display: block;
+  text-align: center;
+  position: relative;
+  margin-top: 1rem;
+
+}
+
+.or-social-media span {
+  background-color: white;
+  padding: 0px 5px;
+}
+
+.card-footer-form {
+  margin: -20px -40px -40px;
+  padding: 25px 40px 40px 40px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card-social-media {
+  background-color: white;
+  padding-top: 25px;
+}
+
+.progress {
+  height: 10px;
+}
+
+.captcha-box {
+  margin-left: 15px;
+}
+
+.logo-payment {
+  display: block;
+  padding: 5px 10px 15px 6px;
+}
+
+.logo-payment img {
+  height: 25px;
+  margin-right: 10px;
+}
+
+.addons-heading {
+  padding: 5px 10px 15px 10px;
+  color: #0071bc;
+  display: block;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  float: left;
+}
+
+.section-switch-company {
+  font-family: "Gotham-Medium", Helvetica, sans-serif;
+
+}
+
+.table-pointer tbody tr {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .btn-return-to-admin {
+    position: fixed !important;
+    top: 425px;
+    right: 0;
+    padding: 5px 15px !important;
+    background-color: #d7d7d7 !important;
+    color: #777 !important;
+    font-size: 0.9rem !important;
+    border-radius: 0 0 3px 3px !important;
+    text-decoration: none;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    z-index: 500;
+  }
+  .btn-return-to-admin:hover {
+    background-color: #cdcdcd !important;
+    color: #444 !important;
+    text-decoration: none;
+  }
+}
+
+.btn-return-to-admin .floating {
+  position: fixed !important;
+  top: 425px;
+  right: 0;
+  padding: 5px 15px !important;
+  background-color: #d7d7d7 !important;
+  color: #777 !important;
+  font-size: 0.9rem !important;
+  border-radius: 0 0 3px 3px !important;
+  text-decoration: none;
+  transform: rotate(90deg);
+  transform-origin: top right;
+  z-index: 500;
+}
+
+.btn-return-to-admin .floating:hover {
+  background-color: #cdcdcd !important;
+  color: #444 !important;
+  text-decoration: none;
+}
+
+.heading-h2 h2, .module-client-area h3 {
+  font-size: 16px!important;
+}
+
+/**
+ * -------------------------
+ * @section Two Factor Authentication
+ * -------------------------
+ */
+
+.twofa-setup .modal-body {
+    min-height: 100px;
+}
+.twofa-setup .activation-msg {
+    margin: 25px 0;
+    padding: 15px;
+    border: 1px dashed #ddd;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.twofa-setup .backup-code {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #efefef;
+    color: #444;
+    text-align: center;
+}
+
+.twofa-module {
+    margin: 10px 0;
+    padding: 14px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.twofa-module .col-radio {
+    float: left;
+    width: 35px;
+    margin-top: 12px;
+}
+.twofa-module .col-logo {
+    float: left;
+    width: 80px;
+    line-height: 40px;
+    text-align: center;
+}
+.twofa-module .col-description {
+    margin-left: 136px;
+}
+.twofa-module img {
+    max-width: 100%;
+    max-height: 40px;
+}
+.twofa-module.active {
+    border-color: #337ab7;
+}
+
+.btn-lg {
+  height: 46px;
+}
