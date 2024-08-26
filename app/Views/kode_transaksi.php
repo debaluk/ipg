@@ -7,12 +7,12 @@
             <div class="menu-main-header"><span> Setup<em><i class="fa fa-angle-right"></i></em></span></div>
             <div class="menu-main-inner">
               <ul class="inline-list">
-                  <li class="selected">
+                  <li class="">
                       <a href="<?= base_url('setup') ?>"><span>Data Event</span></a>
                   </li>
       
-                  <li  class="">
-                    <a href="<?= base_url('kode') ?>"><span>Kode Transaksi</span></a>
+                  <li  class="selected">
+                    <a href="<?= base_url('kode') ?>/data"><span>Kode Transaksi</span></a>
                   </li>
                   <li  class="">
                     <a href="<?= base_url('acesskeys') ?>"><span>Midtrans</span></a>
@@ -27,23 +27,38 @@
       
       <div class="space-30"></div>
       <div class="row">
+        <div class="col-xs-12">
+          Kode transaksi event 
+          <div class="space-10"></div>
+            <label class="control-label" for="amount">Nama Event</label>
+            <select id="id_event" name="id_event" class="form-control">
+            <?php
+              foreach ($event as $c) : ?> 
+                  <option value="<?= $c['id_event']; ?>"><?= $c['nama_event']; ?></option>
+                  
+            <?php endforeach; ?>
+            </select>
+            <label class="control-label" for="amount">Jenis Transaksi	</label>
+            <select id="id_jenis" name="id_jenis" class="form-control">
+            <?php
+            foreach ($jenis as $c) : ?> 
+                  <option value="<?= $c['id_jenis']; ?>"><?= $c['nama_jenis']; ?></option>
+                  
+            <?php endforeach; ?>
+                  
+            </select>
+            <label class="control-label" for="amount">Kode (3 digit depan):</label>
+            <input type="text" class="form-control" name="ck_p" id="ck_p" value="">
+            <div class="space-10"></div>
+            <input type="submit" value="Simpan" class="btn btn-primary"> 
+            <input type="reset" value="Batal" class="btn btn-success"> 
+        </div>
+      </div>
+
+      <div class="row">
           <div class="col-xs-12">
             <div class="bootstrap-table">             
-              <div class="fixed-table-container table-no-bordered" style="padding-bottom: 0px;">
-                  <!-- tool bar table-->
-                  <div class="row domains-row">
-                          
-                          <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModal">
-                              Tambah Event
-                            </button>
-
-                            
-                          </div>
-
-                          
-                  </div>
-                  <!-- -->
+              <div class="fixed-table-container table-no-bordered" style="padding-bottom: 0px;">                  
                   <div class="space-10"></div>
                   <div class="fixed-table-body">
                     <div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please wait...</div>
@@ -51,23 +66,21 @@
                         <!-- judul tabel -->
                         <thead>
                             <tr>
-                              <th><div class="th-inner sortable both">Nama Event</div><div class="fht-cell"></div></th>
-                              <th style="width:150px;"><div class="th-inner sortable both">Fee Bank Transer</div><div class="fht-cell"></div></th>
-                              <th style="width:150px;"><div class="th-inner sortable both">Fee Credit Card</div><div class="fht-cell"></div></th>
-                              <th style="width:150px;"><div class="th-inner sortable both">Admin Fee</div><div class="fht-cell"></div></th>
+                              <th style=""><div class="th-inner sortable both">Nama Event</div><div class="fht-cell"></div></th>
+                              <th  style="width:150px;"><div class="th-inner sortable both">Jenis Transaksi</div><div class="fht-cell"></div></th>
+                              <th  style="width:150px;"><div class="th-inner sortable both">Kode Transaksi</div><div class="fht-cell"></div></th>
                               
-                              <th style="width:100px;"><div class="th-inner "></div><div class="fht-cell"></div></th>
+                              <th  style="width:100px;"><div class="th-inner "></div><div class="fht-cell"></div></th>
                             </tr>
                         </thead>
                         <!-- isi tabel -->
-                         <?php
-                        foreach ($event as $c) : ?>
+                        <?php
+                        foreach ($kode as $c) : ?>
                           <tr>
                              
-                              <td><?= $c['nama_event']; ?></td>
-                              <td align="right"><?= number_format($c['fee_bank_tf'], 2, ",", "."); ?></td>
-                              <td align="right"><?= number_format($c['fee_cc'], 2, ",", "."); ?></td>
-                              <td align="right"><?= number_format($c['admin_fee'], 2,",","."); ?></td>
+                              <td><?= $c->nama_event; ?></td>
+                              <td><?= $c->nama_jenis; ?></td>
+                              <td><?= $c->kode; ?></td>
                               <td>
                                   <div class="btn-group btn-group-xs pull-right" style="min-width: 6em">
                                     <a class="btn btn-primary" href="#">Aksi</a>
@@ -93,26 +106,7 @@
 
     </div>     
 
-<!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 <?=$this->endSection();?>

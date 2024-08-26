@@ -3,26 +3,28 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-
+use App\Models\SetupModel;
 
 class Setup extends BaseController
 {
-    private $transaksi;
+    protected $m_event;
 
     public function __construct()
     {
-        
+        $this->m_event = new SetupModel();
         helper('form');
     }
 
     public function index()
     {
+        $event = $this->m_event->getEvent();
         $data = [
-            'title' => 'transaksi',
-           
+            
+            'event'=> $event,
         ];
        
-        echo view('setup', $data);
+        //echo view('setup', $data);
+        return view('setup', $data);
     }
 
 }
