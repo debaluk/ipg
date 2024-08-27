@@ -3,3 +3,7 @@
 <script src="<?= base_url('plugins/select2/js/select2.min.js') ?>"></script>
 <script src="<?= base_url('plugins/toastr/toastr.min.js') ?>"></script>
 <script src="<?= base_url('plugins/sweetalert2/sweetalert2.min.js') ?>"></script>
+<script src="<?= base_url('plugins/datatables/jquery.dataTables.min.js') ?>"></script>
+<script src="<?= base_url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') ?>"></script>
+<script src="<?= base_url('plugins/sweetalert2/sweetalert2.min.js') ?>"></script>
+<script src="<?= base_url('plugins/toastr/toastr.min.js') ?>"></script>

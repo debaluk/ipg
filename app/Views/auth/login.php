@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="" />
     <!-- icon -->
-    <link rel="shortcout icon" href="<?= base_url('hexa') ?>/assets/img/favicon.ico">
+    <link rel="shortcout icon" href="<?= base_url('hexa') ?>/assets/img/favicon_ori.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?= base_url('hexa') ?>/assets/img/apple-touch-icon-144x144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= base_url('hexa') ?>/assets/img/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= base_url('hexa') ?>/assets/img/apple-touch-icon-72x72-precomposed.png">
@@ -40,8 +40,8 @@
                         <div class="space-20"></div>          
                         <div class="providerLinkingFeedback"></div>
 
-                        <?= form_open(base_url('auth/login')); ?>
-                           
+                        <?= form_open(base_url('auth/proses')); ?>
+                        <div id="base-url" data-url="<?= base_url(); ?>"></div>
                             <div class="form-group">
                                 <div class="input-group input-group-lg">
                                 <span class="input-group-addon"><span aria-hidden="true" class="icon icon-user"></span></span>

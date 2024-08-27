@@ -121,7 +121,72 @@ class Import extends BaseController
 		if(file_exists($file_name))
 			unlink($file_name);
 		if(count($list) > 0) {
-			$result 	= $this->m_import->bulkInsert($list);
+			$result 	= $this->m_import->bulkInsertP($list);
+			if($result) {
+				$json = [
+					'success_message' 	=> "Upload dan import data berhasil,silakan bukan halaman transaksi.",
+				];
+			} else {
+				$json = [
+					'error_message' 	=> "Terjadi kesalahan, silakan dicoba lagi.",
+				];
+			}
+		} else {
+			$json = [
+				'error_message' => "Data tidak ditemukan.",
+			];
+		}
+
+		echo json_encode($json);
+	}
+	
+	public function importTransaksipout() {
+		$path 			= './uploads/payout/';
+		$json 			= [];
+		$file_name 		= $this->request->getFile('file');
+		$file_name 		= $this->uploadFile($path, $file_name);
+		$arr_file 		= explode('.', $file_name);
+		$extension 		= end($arr_file);
+		if('csv' == $extension) {
+			$reader 	= new \PhpOffice\PhpSpreadsheet\Reader\Csv();
+		} else {
+			$reader 	= new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+		}
+		$spreadsheet 	= $reader->load($file_name);
+		$sheet_data 	= $spreadsheet->getActiveSheet()->toArray();
+
+		$list 			= [];
+		foreach($sheet_data as $key => $val) {
+			if($key != 0) {
+				$result 	= $this->m_import->getTransaksiP([
+					"date_create" 			=> $val[1], //nomor urut tabel mulai dari 1
+					"order_id" 				=> $val[2],
+					"transaction_type" 		=> $val[3],
+					"channel" 				=> $val[4],
+					"status" 				=> $val[5], 
+					"reference" 			=> $val[6], 
+					"amount" 				=> $val[7],
+				]);				
+				
+				if($result) {
+				} else {
+					$list [] = [
+						"date_create" 			=> $val[0],
+						"order_id" 				=> $val[1],
+						"transaction_type" 		=> $val[2],
+						"channel" 				=> $val[3],
+						"status" 				=> $val[4],
+						"reference" 			=> $val[5], 
+						"amount" 				=> str_replace('-', '', $val[6]),
+					];
+				}
+			}
+		}
+		
+		if(file_exists($file_name))
+			unlink($file_name);
+		if(count($list) > 0) {
+			$result 	= $this->m_import->bulkInsertP($list);
 			if($result) {
 				$json = [
 					'success_message' 	=> "Upload dan import data berhasil,silakan bukan halaman transaksi.",

@@ -61,28 +61,31 @@
                           
                   </div>
                   <!-- -->
+                  
                   <div class="space-10"></div>
                   <div class="fixed-table-body">
                     <div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please wait...</div>
-                      <table id="table" data-classes="table table-no-bordered table-striped table-pointer" data-toggle="table" data-url="/api/v1/products_table_data.php" data-side-pagination="server" data-pagination="true" data-page-list="[10, 25, 50]" data-query-params="queryParams" data-toolbar="#toolbar" data-sort-name="nextduedate" data-sort-order="desc" class="table table-no-bordered table-striped table-pointer">
+					<div class="">
+                      <table id="table" name="table" class="table table-no-bordered table-striped table-pointer" style="width:100%;">
                         <!-- judul tabel -->
                         <thead>
                             <tr>
                               <th style=""><div class="th-inner sortable both">Tanggal</div><div class="fht-cell"></div></th>
-                              <th style=""><div class="th-inner sortable both">Order ID</div><div class="fht-cell"></div></th>
-                              <th style=""><div class="th-inner sortable both">Jenis transaksi</div><div class="fht-cell"></div></th>
+                              <th style="width:150px;"><div class="th-inner sortable both">Order ID</div><div class="fht-cell"></div></th>
                               <th style=""><div class="th-inner sortable both">Channel</div><div class="fht-cell"></div></th>
-                              <th style=""><div class="th-inner sortable both">Nama Customer</div><div class="fht-cell"></div></th>
-                              <th style=""><div class="th-inner sortable both">Email Customer</div><div class="fht-cell"></div></th>
                               <th style=""><div class="th-inner sortable both">Jumlah</div><div class="fht-cell"></div></th>
+                              <th style="width:150px;"><div class="th-inner sortable both">Nama Customer</div><div class="fht-cell"></div></th>
+                              <th style=""><div class="th-inner sortable both">Email Customer</div><div class="fht-cell"></div></th>
+                              <th style=""><div class="th-inner sortable both">Produk</div><div class="fht-cell"></div></th>
                               <th style=""><div class="th-inner sortable both desc">Status</div><div class="fht-cell"></div></th>                                
-                              <th style=""><div class="th-inner "></div><div class="fht-cell"></div></th>
+                             
                             </tr>
                         </thead>
                         <!-- isi tabel -->
                          
                         
                       </table>
+					  </div>
                     </div>                      
                   </div>
 
@@ -94,7 +97,27 @@
 
     </div>     
 
+<script type="text/javascript">
+    $(document).ready(function() {
 
-
+        $('#table').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax:{
+            url: '<?php echo site_url('transaksi/ajax') ?>'
+          },
+          columns: [
+              {data: 'transaction_time', name: 'transaction_time'},
+              {data: 'order_id', name: 'order_id'},
+              {data: 'channel', name: 'channel'},
+              {data: 'amount', name: 'amount'},
+              {data: 'customer_name', name: 'customer_name'},
+              {data: 'customer_email', name: 'customer_email'},
+              {data: 'nama_produk', name: 'nama_produk'},
+              {data: 'transaction_status', name: 'transaction_status'},
+          ]
+        });
+    });
+</script>
 
 <?=$this->endSection();?>

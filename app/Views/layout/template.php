@@ -32,17 +32,20 @@
                         <a href="<?= base_url('dashboard') ?>" data-original-title="Dashboard"><img src="<?= base_url('') ?>/logo.png"></a>
                         </li>
                         <li >
-                        <a href="<?= base_url('transaksi') ?>" data-original-title="Store"><span aria-hidden="true" class="icon icon-rocket"></span><span class="hidden-minibar  sidebar-label"> Transaksi</span></a>
+                        <a href="<?= base_url('transaksi') ?>" data-original-title="Transaksi"><span aria-hidden="true" class="icon icon-basket"></span><span class="hidden-minibar  sidebar-label"> Transaksi</span></a>
                         </li>                    
                         <li >
-                        <a href="<?= base_url('saldo') ?>" data-original-title="Services"><span aria-hidden="true" class="icon icon-layers"></span><span class="hidden-minibar  sidebar-label"> Saldo</span></a>
+                        <a href="<?= base_url('saldo') ?>" data-original-title="Saldo"><span aria-hidden="true" class="icon icon-layers"></span><span class="hidden-minibar  sidebar-label"> Saldo</span></a>
                         </li>
                         <li >
-                        <a href="<?= base_url('mutasi') ?>" data-original-title="Billing"><span aria-hidden="true" class="icon icon-credit-card"></span><span class="hidden-minibar  sidebar-label"> Mutasi</span></a>
+                        <a href="<?= base_url('mutasi') ?>" data-original-title="Mutasi"><span aria-hidden="true" class="icon icon-credit-card"></span><span class="hidden-minibar  sidebar-label"> Mutasi</span></a>
                         </li>
                         <li >
-                        <a href="<?= base_url('setup') ?>" data-original-title="Support"><span aria-hidden="true" class="icon icon-support"></span><span class="hidden-minibar  sidebar-label"> Setup</span></a>
-                        </li>                        
+                        <a href="<?= base_url('setup') ?>" data-original-title="Setup"><span aria-hidden="true" class="icon icon-support"></span><span class="hidden-minibar  sidebar-label"> Setup</span></a>
+                        </li> 
+						<li >
+                        <a href="<?= base_url('import') ?>" data-original-title="Import"><span aria-hidden="true" class="icon icon-rocket"></span><span class="hidden-minibar  sidebar-label"> Import</span></a>
+                        </li> 						
                         <li>
                         <a href="auth/logout"><span aria-hidden="true" class="icon icon-logout"></span> Logout</a>
                         </li>

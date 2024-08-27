@@ -18,11 +18,9 @@ class Dashboard extends BaseController
     public function index()
     {
         $data = [
-            'title'     => 'Dashboard Module',
-            //'aksesmodul' => $this->pengguna->getRoleakses(session('id')),
-           
+            
         ];
-        echo view('dashboard', $data);
+        return view('dashboard', $data);
     }
 
 }

@@ -6,7 +6,8 @@ use CodeIgniter\Model;
 
 class ImportModel extends Model
 {
-    protected $table      = 'tb_transaksi';
+    protected $table      	= 'tbl_transaksi';
+	protected $tableP   	= 'tbl_payout';
     protected $primaryKey = 'id_transaksi';
     protected $allowedFields = ['date_time','date_time'];
     protected $useTimestamps = true;
@@ -33,6 +34,14 @@ class ImportModel extends Model
                         ->get()
                         ->getRow();
     }
+	
+	public function getTransaksiP($where) {
+        return $this->db
+                        ->table($this->tableP)
+                        ->where($where)
+                        ->get()
+                        ->getRow();
+    }
 
     public function updateTransaksi($where, $data) {
         return $this->db
@@ -54,8 +63,13 @@ class ImportModel extends Model
                         ->table($this->table)
                         ->insertBatch($data);
     }
-
-
+	
+	//payout
+	public function bulkInsertP($data) {
+        return $this->db
+                        ->table($this->tableP)
+                        ->insertBatch($data);
+    }
     
 
    
