@@ -30,8 +30,8 @@ class Kode extends BaseController
             'jenis'=> $jenis,
             'kode'=> $kode,
         ];
-       
-        echo view('kode_transaksi', $data);
+        return view('kode_transaksi', $data);
+        
     }
 
 }

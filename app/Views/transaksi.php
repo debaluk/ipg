@@ -28,22 +28,26 @@
                             
                             <div class="input-group">
                               <div class="input-group-addon input-group-prepend">
-                                <span class="input-group-text">Event</span>
+                                <span class="input-group-text">Nama Event</span>
                               </div>
-                              <select id="registertld" class="form-control">
-                                    <option value="">PIT</option>
-                                    
-                              </select>
+                              <select id="id_event" name="id_event" class="form-control">
+                              <option value="">Semua Event</option>
+                                <?php
+                                  foreach ($event as $c) : ?> 
+                                      <option value="<?= $c['id_event']; ?>"><?= $c['nama_event']; ?></option>
+                                      
+                                <?php endforeach; ?>
+                                </select>
                             </div>              
                           </div>
                           <div class="col-xs-3 col-3">
                             
                             <div class="input-group">
                               <div class="input-group-addon input-group-prepend">
-                                <span class="input-group-text">Transaksi</span>
+                                <span class="input-group-text">Jenis Transaksi</span>
                               </div>
-                              <select id="registertld" class="form-control">
-                                    <option value="">PIT</option>
+                              <select id="jenis" class="form-control">
+                                    <option value=""></option>
                                     
                               </select>
                             </div>              

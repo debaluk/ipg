@@ -27,6 +27,14 @@ class KodeModel extends Model
             ->get()->getResult();
         
     }
+	
+	public function getIdOrder($where) {
+        return $this->db
+                        ->table($this->table)
+                        ->where($where)
+                        ->get()
+                        ->getRow();
+    }
 
     
 
